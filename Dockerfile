@@ -1,9 +1,7 @@
 #ASSUME A LINUX KERNEL
-FROM ubuntu:latest
-RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev
-COPY requirements.txt /app/requirements.txt
-WORKDIR /app
+FROM python:3.8-slim
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
 RUN pip3 install -r requirements.txt
-COPY . /app
 ENTRYPOINT ["python3", "app.py"]
