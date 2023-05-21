@@ -13,7 +13,7 @@ def hello():
 
 @app.route("/version")
 def version():
-  return "Helloworld 1.1\n"
+  return "Helloworld 1.0\n"
 
 if __name__ == "__main__":
   serve(app,host="0.0.0.0",port=int(os.environ.get("PORT", 8080)))
