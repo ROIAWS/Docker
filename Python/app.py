@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-  acct_balance = random.randint(1, 100000000)/100
+  acct_balance = random.randint(1, 10000000)/100
   return "Your Bank Account Balance is $" + str(acct_balance) + "!\n"
 
 @app.route("/version")
